@@ -198,7 +198,6 @@ function Form() {
             Sélectionnez une option
           </option>
           <option value="1">Votre consommation en kWh mensuel</option>
-          <option value="2">Le montant de votre facture mensuel</option>
         </select>
       </label>
 
