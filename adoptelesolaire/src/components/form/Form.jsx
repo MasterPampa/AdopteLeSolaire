@@ -42,7 +42,52 @@ function Form() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    
+    // Calculs basés sur les données du formulaire
+    const pc = 3; // Puissance crête (3 kWc pour un kit classique)
+    const irr = 1450; // Irradiation de 1450 kWh/m2.an dans la région
+    const fc = parseFloat(formData.exposition); // Conversion de la valeur en nombre
+    
+    const productionAnnuelle = pc * irr * fc;
+    
+    const consotype = formData.consotype;
+    let consoValue;
+  
+    if (consotype === "2") {
+      // Le montant de la facture mensuel en euro
+      consoValue = parseFloat(formData.consovalue);
+    } else if (consotype === "1") {
+      // La consommation en kWh mensuel
+      consoValue = parseFloat(formData.consovalue) * 12;
+    } else {
+      window.alert('Type de consommation non pris en charge.');
+      return; // Quitte la fonction en cas de type de consommation non pris en charge
+    }
+  
+    const tac = (productionAnnuelle / consoValue) * 100;
+    const tacAvecPilotage = tac + 20;
+    
+    const potentielAutoconsommation = (productionAnnuelle * tacAvecPilotage) / 100;
+    
+    const gainReventeSurplus = productionAnnuelle - potentielAutoconsommation;
+    const gainEurosReventeSurplus = gainReventeSurplus * 0.13;
+    
+    const pourcentageEconomies = (potentielAutoconsommation / consoValue) * 100;
+    const pourcentageEconomiesAvecContratEDF = pourcentageEconomies + 8;
+  
+    const gainEnEurosSurFacture = pourcentageEconomiesAvecContratEDF * consoValue * 0.2276 / 100;
+    const amortissementAnnuel = ((gainEnEurosSurFacture + gainEurosReventeSurplus) / (6490 - 1530)) * 100;
+  
+    // Affichage des résultats dans la fenêtre d'alerte
+    window.alert(`
+    Production annuelle en kWh: ${Math.floor(productionAnnuelle)}
+    Taux d'autoconsommation en %: ${Math.floor(tacAvecPilotage)}
+    Potentiel de production autoconsommée en kWh: ${Math.floor(potentielAutoconsommation)}
+    Gain avec la revente de surplus à l'année en €: ${Math.abs(Math.floor(gainEurosReventeSurplus))}
+    Economies sur la facture annuelle en %: ${Math.floor(pourcentageEconomiesAvecContratEDF)}
+    Economies sur la facture à l'année en €: ${Math.floor(gainEnEurosSurFacture)}
+    Amortissement de l'installation sur l'année en %: ${Math.floor(amortissementAnnuel)}
+  `);
   
     try {
       const response = await fetch('http://localhost:3001/submit-form', {
@@ -55,49 +100,12 @@ function Form() {
   
       if (response.ok) {
         console.log('Données envoyées avec succès.');
-        // Vous pouvez également rediriger l'utilisateur ou effectuer d'autres actions après l'envoi réussi.
       } else {
         console.error('Erreur lors de l\'envoi des données.');
       }
     } catch (error) {
       console.error('Erreur inattendue :', error);
     }
-  
-    // Calculs basés sur les données du formulaire
-    const pc = 3; // Puissance crête (3 kWc pour un kit classique)
-    const irr = 1450; // Irradiation de 1450 kWh/m2.an dans la région
-    const fc = parseFloat(formData.exposition); // Conversion de la valeur en nombre
-  
-    const productionAnnuelle = pc * irr * fc;
-  
-    const consotype = formData.consotype;
-    let consoValue;
-
-    if (consotype === "2") {
-    // Le montant de la facture mensuel en euro
-      consoValue = parseFloat(formData.consovalue);
-    } else if (consotype === "1") {
-      // La consommation en kWh mensuel
-      consoValue = parseFloat(formData.consovalue) * 12;
-    } else {
-      console.error('Type de consommation non pris en charge.');
-      return; // Quitte la fonction en cas de type de consommation non pris en charge
-  }
-
-
-  const tac = (productionAnnuelle / consoValue) * 100;
-  const tacAvecPilotage = tac + 20;
-  
-  const potentielAutoconsommation = (productionAnnuelle * tacAvecPilotage) / 100;
-  
-  const gainReventeSurplus = productionAnnuelle - potentielAutoconsommation;
-  const gainEurosReventeSurplus = gainReventeSurplus * 0.13;
-  
-  const pourcentageEconomies = (potentielAutoconsommation / (consoValue)) * 100;
-  const pourcentageEconomiesAvecContratEDF = pourcentageEconomies + 8;
-
-  const gainEnEurosSurFacture = pourcentageEconomiesAvecContratEDF * consoValue * 0.2276 / 100;
-  const amortissementAnnuel = ((gainEnEurosSurFacture + gainEurosReventeSurplus) / (6490 - 1530))*100;
 
   // Affichage des résultats dans la console
   console.log('Production annuelle en kWh:', productionAnnuelle);
