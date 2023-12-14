@@ -1,6 +1,6 @@
 import './header.css'
 
-function Header() {
+function Header({openModal}) {
     return ( 
         <header>
             <div className="frontrow">
@@ -17,7 +17,7 @@ function Header() {
             </div>
             <div className='secondrow'>
                 <div className='buttons'>
-                    <a href="#" className="contact button2">Contactez-nous</a>
+                    <a href="#" className="contact button2" onClick={openModal}>Contactez-nous</a>
                     <a href="#" className="simulator button">Simulateur</a>
                 </div>
             </div>

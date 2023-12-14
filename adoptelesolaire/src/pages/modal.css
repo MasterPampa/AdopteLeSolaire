@@ -1,0 +1,45 @@
+.ma-modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  background-color: white;
+  box-shadow: 10px 0px 30px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+.ma-modal .close {
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  cursor: pointer;
+}
+
+.modalTitle {
+  margin-top: 50px;
+  font-size: 3vw;
+}
+
+.modalContent {
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.modalContent article {
+  margin: 0 0 40px 0;
+}
+.modalContent .contacts {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 40px;
+}
+.modalContent .contacts p, .modalContent .contacts h4 {
+  width: 70%;
+  font-size: 1.5vw;
+  margin-left: 50px;
+}/*# sourceMappingURL=modal.css.map */
