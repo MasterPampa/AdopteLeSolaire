@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/AdopteLeSolaire/static/css/main.bddf2a1a.css",
-    "main.js": "/AdopteLeSolaire/static/js/main.6088b73b.js",
+    "main.css": "/AdopteLeSolaire/static/css/main.5b2a36b0.css",
+    "main.js": "/AdopteLeSolaire/static/js/main.7d270445.js",
     "static/media/image3.png": "/AdopteLeSolaire/static/media/image3.2f24a1756109015531d0.png",
     "static/media/image1.png": "/AdopteLeSolaire/static/media/image1.97f6c3944ada98ae67ca.png",
     "static/media/image2.png": "/AdopteLeSolaire/static/media/image2.a8d1c2b1a106ca4a2cff.png",
     "static/media/testBackground.png": "/AdopteLeSolaire/static/media/testBackground.135c4e6051456429f33b.png",
     "index.html": "/AdopteLeSolaire/index.html",
-    "main.bddf2a1a.css.map": "/AdopteLeSolaire/static/css/main.bddf2a1a.css.map",
-    "main.6088b73b.js.map": "/AdopteLeSolaire/static/js/main.6088b73b.js.map"
+    "main.5b2a36b0.css.map": "/AdopteLeSolaire/static/css/main.5b2a36b0.css.map",
+    "main.7d270445.js.map": "/AdopteLeSolaire/static/js/main.7d270445.js.map"
   },
   "entrypoints": [
-    "static/css/main.bddf2a1a.css",
-    "static/js/main.6088b73b.js"
+    "static/css/main.5b2a36b0.css",
+    "static/js/main.7d270445.js"
   ]
 }
