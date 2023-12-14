@@ -1,0 +1,64 @@
+.articleContainer{
+    width: 85%;
+    margin-top: 100px;
+    
+    .textContent{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        h3{
+            font-size: 3.5vw;
+            font-weight: bold;
+        }
+        p{
+            margin-top: 30px;
+            font-size: 1.5vw;
+        }
+        a{
+            margin-top: 30px;
+        }
+    }
+    .imageContent{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        img{
+            max-width: 60%;
+            overflow: visible;
+            object-fit: cover;
+        }
+    }
+}
+article{
+    display: flex;
+    margin-bottom: 120px;
+}
+
+@media screen and (max-width: 650px){
+    .articleContainer{
+        justify-content: center;
+        .impair, .pair{
+            align-items: center;
+            .imageContent{
+                width: 100%;
+            }
+            .textContent{
+                width: 80%;
+                text-align: justify;
+                h3{
+                    font-size: 7vw;
+                }
+                p{
+                    font-size: 3vw;
+                }
+            }
+        }
+        .impair{
+            flex-direction: column-reverse;
+        }
+        .pair{
+            flex-direction: column;
+        }
+    }
+
+}

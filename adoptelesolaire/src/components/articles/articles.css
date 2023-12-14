@@ -1,0 +1,63 @@
+.articleContainer {
+  width: 85%;
+  margin-top: 100px;
+}
+.articleContainer .textContent {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.articleContainer .textContent h3 {
+  font-size: 3.5vw;
+  font-weight: bold;
+}
+.articleContainer .textContent p {
+  margin-top: 30px;
+  font-size: 1.5vw;
+}
+.articleContainer .textContent a {
+  margin-top: 30px;
+}
+.articleContainer .imageContent {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.articleContainer .imageContent img {
+  max-width: 60%;
+  overflow: visible;
+  object-fit: cover;
+}
+
+article {
+  display: flex;
+  margin-bottom: 120px;
+}
+
+@media screen and (max-width: 650px) {
+  .articleContainer {
+    justify-content: center;
+  }
+  .articleContainer .impair, .articleContainer .pair {
+    align-items: center;
+  }
+  .articleContainer .impair .imageContent, .articleContainer .pair .imageContent {
+    width: 100%;
+  }
+  .articleContainer .impair .textContent, .articleContainer .pair .textContent {
+    width: 80%;
+    text-align: justify;
+  }
+  .articleContainer .impair .textContent h3, .articleContainer .pair .textContent h3 {
+    font-size: 7vw;
+  }
+  .articleContainer .impair .textContent p, .articleContainer .pair .textContent p {
+    font-size: 3vw;
+  }
+  .articleContainer .impair {
+    flex-direction: column-reverse;
+  }
+  .articleContainer .pair {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=articles.css.map */

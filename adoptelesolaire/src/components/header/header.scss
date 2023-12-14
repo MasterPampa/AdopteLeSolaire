@@ -1,0 +1,128 @@
+body, h1, h2, h3, h4, h5, h6, p, div {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+}
+  
+
+header{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+        .frontrow{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            .title{
+                font-size: 2vw;
+                h1{
+                    margin: 0;
+                }
+                cursor: default;
+            }
+        }
+        .secondrow{
+            display: flex;
+            justify-content: flex-end;
+            .buttons{
+                display: flex;
+                gap: 25px;
+                a{
+                    text-decoration: none;
+                }
+                .button2{
+                    color: black;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    height: 60px;
+                    width: 170px;
+                    border-radius: 50px;
+                    font-weight: bold;
+                }
+            }
+        }
+}
+.socials{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    a{
+        text-decoration: none;
+        color: black;
+        transition: all 0.2s ease-in-out;
+            &:hover{
+                color: white;
+            }
+    }
+}
+.button{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #528FEB;
+    height: 60px;
+    width: 170px;
+    border-radius: 50px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    &:hover{
+        background-color: #52B7EB;
+        font-weight: bold;
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 150, 255, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 150, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 150, 255, 0);
+    }
+}
+
+@media screen and (max-width: 956px){
+    header{
+        p{
+            display: none;
+        }
+        .frontrow{
+            margin-bottom: 10px;
+        }
+        
+    }
+}
+
+@media screen and (max-width: 650px){
+    header{
+        .frontrow{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            justify-content: center;
+            .title{
+                font-size: 3.5vw;
+            }
+            .socials{
+                display: none;
+            }
+        }
+        .secondrow{
+            justify-content: center;
+        }
+        
+    }
+}

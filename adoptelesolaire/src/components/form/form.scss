@@ -1,0 +1,119 @@
+.formContainer{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 25px;
+    form{
+        display: flex;
+        flex-direction: column;
+        label{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    h2{
+        color: white;
+        text-align: center;
+        font-size: 3vw;
+        margin-bottom: 30px;
+    }
+    label{
+        color: white;
+        font-size: 1.6vw;
+        margin-bottom: 40px;
+    }
+    input[type=text],input[type=number], input[type=email], input[type=tel], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: Poppins;
+      }
+      .next, .submit{
+        width: 30%;
+        padding: 12px 20px;
+        border-radius: 4px;
+        align-self: center;
+        border: 2px solid transparent;
+        font-family: Poppins;
+        color: white;
+        background-color: #4eca22;
+        box-shadow: 0 7px 5px rgba(0,0,0,0.5);
+        transition: all 0.2s ease-in;
+        font-size: 1vw;
+        font-weight: bold;
+        margin-bottom: 30px;
+        &:hover{
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+      }
+      .backButton{
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+        cursor: pointer;
+      }
+      .dots{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 5px;
+        .dot{
+            width: 10px;
+            height: 10px;
+            border-radius: 25px;
+            background-color: rgba(255,255,255);
+        }
+        .selected{
+            background-color: #4eca22;
+            width: 13px;
+            height: 13px;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+@media screen and (max-width: 956px){
+    .formContainer{
+        width: 50%;
+        h2{
+            font-size: 4vw;
+        }
+        label{
+            font-size: 3vw;
+            margin-bottom: 20px;
+        }
+        .next, .submit{
+            width: 40%;
+            font-size: 1.5vw;
+        }
+    }
+}
+
+@media screen and (max-width: 650px){
+    .formContainer{
+        width: 75%;
+        h2{
+            font-size: 7vw;
+        }
+        label{
+            margin-bottom: 40px;
+            font-size: 5vw;
+        }
+        .next, .submit{
+            width: 40%;
+            font-size: 3vw;
+        }
+    }
+}

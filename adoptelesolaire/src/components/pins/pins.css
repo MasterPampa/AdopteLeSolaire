@@ -1,0 +1,35 @@
+a {
+  color: #528FEB;
+  text-decoration: none;
+}
+
+.roundButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: white;
+  border: 3px solid #528FEB;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+  animation: pulse 2s infinite;
+}
+.roundButton:hover {
+  color: white;
+  background-color: #528FEB;
+  border: white 3px solid;
+}
+
+aside {
+  position: fixed;
+  bottom: 80px;
+  right: 60px;
+}
+
+@media screen and (max-width: 956px) {
+  aside {
+    display: none;
+  }
+}/*# sourceMappingURL=pins.css.map */
