@@ -118,6 +118,16 @@ function Form() {
   };
 
   return (
+    <span className="span">
+    <div className='route'>
+      <div className='dots'>
+        <span className='line'></span>
+        <div className={`dot ${page === 1 ? 'selected' : ''}`}>1</div>
+        <div className={`dot ${page === 2 ? 'selected' : ''}`}>2</div>
+        <div className={`dot ${page === 3 ? 'selected' : ''}`}>3</div>
+        <div className={`dot ${page === 4 ? 'selected' : ''}`}>4</div>
+      </div>
+    </div>
     <div className='formContainer'>
       {page === 1 && (
         <div>
@@ -227,7 +237,7 @@ function Form() {
 )}
 
 
-      <label>
+      <label className='carLabel'>
         Combien de véhicules électriques disposez-vous ? :
         <select
           name="vehicules"
@@ -266,16 +276,11 @@ function Form() {
             </form>
         </div>
       )}
-        <div className='dots'>
-          <div className={`dot ${page === 1 ? 'selected' : ''}`}></div>
-          <div className={`dot ${page === 2 ? 'selected' : ''}`}></div>
-          <div className={`dot ${page === 3 ? 'selected' : ''}`}></div>
-          <div className={`dot ${page === 4 ? 'selected' : ''}`}></div>
-        </div>
       {page > 1 && (
         <span onClick={handleBack} className='backButton'><p>Retour</p></span> 
       )}
     </div>
+    </span>
   );
 }
 

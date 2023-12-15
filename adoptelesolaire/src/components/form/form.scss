@@ -1,3 +1,56 @@
+.span{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.route{
+    width: 65%;
+    height: 25vh;
+    background-color: rgba(0, 0, 0,0.7);
+    margin-top: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    .dots{
+        display: flex;
+        justify-content: space-between;
+        width: 65%;
+        position: relative;
+        .line{
+            position: absolute;
+            width: 90%;
+            left: 5%;
+            height: 10px;
+            background-color: white;
+            top: 50px;
+            z-index: 0;
+        }
+        .dot{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255);
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 2vw;
+            z-index: 0;
+
+        }
+        .selected{
+            background-color: #387AFB;
+            width: 60px;
+            height: 60px;
+            color: white;
+            transform: translateY(-4px);
+            border: 3px solid black;
+
+        }
+    }
+}
 .formContainer{
     display: flex;
     position: relative;
@@ -5,9 +58,9 @@
     justify-content: center;
     width: 35%;
     padding: 20px;
-    margin-top: 60px;
+    margin-top: -120px;
     margin-bottom: 20px;
-    background-color: rgba(0,0,0,0.7);
+    background-color: #387AFB;
     border-radius: 25px;
     form{
         display: flex;
@@ -64,24 +117,6 @@
         color: white;
         cursor: pointer;
       }
-      .dots{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        gap: 5px;
-        .dot{
-            width: 10px;
-            height: 10px;
-            border-radius: 25px;
-            background-color: rgba(255,255,255);
-        }
-        .selected{
-            background-color: #4eca22;
-            width: 13px;
-            height: 13px;
-            transform: translateY(-2px);
-        }
-    }
 }
 
 @media screen and (max-width: 956px){
@@ -99,21 +134,34 @@
             font-size: 1.5vw;
         }
     }
+    
 }
 
 @media screen and (max-width: 650px){
     .formContainer{
-        width: 75%;
+        width: 65%;
         h2{
             font-size: 7vw;
         }
         label{
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             font-size: 5vw;
+        }
+        .carLabel{
+            font-size: 3vw;
         }
         .next, .submit{
             width: 40%;
             font-size: 3vw;
+        }
+    }
+    .route{
+        width: 90%;
+        .dots{
+            width: 90%;
+            .dot{
+                font-size: 4vw;
+            }
         }
     }
 }

@@ -1,28 +1,41 @@
 import './header.css'
 
-function Header({openModal}) {
-    return ( 
-        <header>
-            <div className="frontrow">
-                <div className="title">
-                    <h1>AdopteLeSolaire.fr</h1>
-                </div>
-                <div className="socials">
-                    <p>Rejoignez-nous sur les réseaux : </p>
-                    <a href="#"><i className="fa-brands fa-facebook fa-2xl"></i></a>
-                    <a href="#"><i className="fa-brands fa-x-twitter fa-2xl"></i></a>
-                    <a href="#"><i className="fa-brands fa-instagram fa-2xl"></i></a>
-                    <a href="#"><i className="fa-brands fa-youtube fa-2xl"></i></a>
-                </div>
-            </div>
-            <div className='secondrow'>
-                <div className='buttons'>
-                    <a href="#" className="contact button2" onClick={openModal}>Contactez-nous</a>
-                    <a href="#" className="simulator button">Simulateur</a>
-                </div>
-            </div>
-        </header>
-     );
+function Header({ openModal }) {
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
+const handleScroll = () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scroll');
+  } else {
+    header.classList.remove('scroll');
+  }
+};
+
+// Écoutez l'événement de scroll
+window.addEventListener('scroll', handleScroll);
+
+return (
+  <header>
+    <div className="frontrow">
+      <div className="title">
+        <h1>AdopteLeSolaire.fr</h1>
+      </div>
+      <div className='secondrow'>
+        <div className='buttons'>
+          <div href="#" className="contact button2" onClick={openModal}>Contactez-nous</div>
+          <div href="#" onClick={scrollToTop} className="simulator button">Simulateur</div>
+        </div>
+      </div>
+    </div>
+  </header>
+);
 }
 
 export default Header;

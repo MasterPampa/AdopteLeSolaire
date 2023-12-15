@@ -1,9 +1,7 @@
-a {
-  color: #528FEB;
-  text-decoration: none;
-}
-
+/* pins.css */
 .roundButton {
+  color: #528feb;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,25 +9,32 @@ a {
   height: 60px;
   border-radius: 50px;
   background-color: white;
-  border: 3px solid #528FEB;
+  border: 3px solid #528feb;
   margin-top: 20px;
   transition: all 0.3s ease-in-out;
   animation: pulse 2s infinite;
+  cursor: pointer;
 }
+
 .roundButton:hover {
   color: white;
-  background-color: #528FEB;
+  background-color: #528feb;
   border: white 3px solid;
 }
 
 aside {
   position: fixed;
-  bottom: 80px;
-  right: 60px;
+  bottom: 50px; /* Initial position off-screen */
+  right: -160px;
+  transition: right 0.5s ease-in-out; /* Transition for the bottom property */
+}
+
+aside.visible {
+  right: 60px; /* Final position on-screen */
 }
 
 @media screen and (max-width: 956px) {
-  aside {
-    display: none;
+  aside.visible {
+    right: 10px;
   }
 }/*# sourceMappingURL=pins.css.map */

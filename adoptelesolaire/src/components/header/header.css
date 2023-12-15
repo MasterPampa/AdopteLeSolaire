@@ -6,35 +6,35 @@ body, h1, h2, h3, h4, h5, h6, p, div {
 
 header {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  width: 90%;
+  position: fixed;
+  width: 100%;
+  height: 12vh;
   margin: auto;
-  margin-top: 10px;
+  top: 0px;
+  background-color: #fbb938;
+  z-index: 99;
 }
 header .frontrow {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 95%;
+  height: 100%;
 }
 header .frontrow .title {
-  font-size: 2vw;
+  font-size: 1.9em;
   cursor: default;
 }
 header .frontrow .title h1 {
   margin: 0;
 }
-header .secondrow {
+header .frontrow .buttons {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  gap: 5%;
 }
-header .secondrow .buttons {
-  display: flex;
-  gap: 25px;
-}
-header .secondrow .buttons a {
-  text-decoration: none;
-}
-header .secondrow .buttons .button2 {
+header .frontrow .buttons .button2 {
   color: black;
   display: flex;
   justify-content: center;
@@ -44,6 +44,16 @@ header .secondrow .buttons .button2 {
   width: 170px;
   border-radius: 50px;
   font-weight: bold;
+  cursor: pointer;
+}
+header .secondrow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.scroll {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  z-index: 98;
 }
 
 .socials {
@@ -74,6 +84,7 @@ header .secondrow .buttons .button2 {
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
   font-weight: bold;
+  cursor: pointer;
 }
 .button:hover {
   background-color: #52B7EB;
@@ -100,6 +111,25 @@ header .secondrow .buttons .button2 {
   }
   header .frontrow {
     margin-bottom: 10px;
+  }
+  header .frontrow .title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+  }
+  header .frontrow .buttons .button2 {
+    height: 7vh;
+    width: 17vw;
+    font-size: 1.5vw;
+  }
+  .button {
+    height: 7vh;
+    width: 17vw;
+  }
+}
+@media screen and (max-width: 770px) {
+  header .frontrow .buttons, header .frontrow .button, header .frontrow .button2 {
+    display: none;
   }
 }
 @media screen and (max-width: 650px) {

@@ -4,6 +4,15 @@ import image2 from '../../images/image2.png'
 import image3 from '../../images/image3.png'
 
 function Articles() {
+
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      };
+      
+
     return ( 
         <div className='flexColumn articleContainer'>
             <article className='impair'>
@@ -16,7 +25,7 @@ function Articles() {
                         Maecenas ultricies risus in diam pharetra congue.
                         In dapibus ex convallis enim cursus dictum.
                         </p>
-                    <a href="#" className='button'>Lorem ipsum</a>
+                    <div className='button' onClick={scrollToTop}>Simulateur</div>
                 </div>
                 <div className='imageContent'>
                     <img srcSet={image1} alt="question" />
@@ -35,7 +44,7 @@ function Articles() {
                         Maecenas ultricies risus in diam pharetra congue.
                         In dapibus ex convallis enim cursus dictum.
                         </p>
-                    <a href="#" className='button flexEnd'>Lorem ipsum</a>
+                        <div className='button' onClick={scrollToTop}>Simulateur</div>
                 </div>
             </article>
             <article className='impair'>
@@ -48,7 +57,7 @@ function Articles() {
                         Maecenas ultricies risus in diam pharetra congue.
                         In dapibus ex convallis enim cursus dictum.
                         </p>
-                    <a href="#" className='button'>Lorem ipsum</a>
+                        <div className='button' onClick={scrollToTop}>Simulateur</div>
                 </div>
                 <div className='imageContent'>
                     <img srcSet={image3} alt="question" />
