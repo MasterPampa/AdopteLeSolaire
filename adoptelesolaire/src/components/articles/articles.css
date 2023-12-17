@@ -35,7 +35,7 @@ article {
 }
 
 .pair {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 @media screen and (max-width: 650px) {

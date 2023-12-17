@@ -9,7 +9,7 @@ body {
   margin: auto;
   background-image: url("../src/images/testBackground.png");
   background-repeat: no-repeat;
-  background-size: 100% 25%;
+  background-size: 100% 10%;
 }
 
 main {
