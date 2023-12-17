@@ -144,9 +144,8 @@ header{
 };
 @media screen and (max-width: 650px){
     header{
+        height: 8vh;
         .frontrow{
-            margin-top: 10px;
-            margin-bottom: 10px;
             justify-content: center;
             .title{
                 font-size: 3.5vw;
@@ -158,6 +157,10 @@ header{
         .secondrow{
             justify-content: center;
         }
-        
+    }
+    .button{
+         height: 6vh;
+         width: 22vw;
+         font-size: 3vw;
     }
 }

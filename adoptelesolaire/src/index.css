@@ -31,7 +31,10 @@ main {
 }
 
 @media screen and (max-width: 650px) {
+  main {
+    margin-top: 6vh;
+  }
   body {
-    background-size: 100% 26%;
+    background-size: 100% 6%;
   }
 }/*# sourceMappingURL=index.css.map */

@@ -123,6 +123,40 @@
 }
 
 @media screen and (max-width: 956px) {
+  .route {
+    width: 50%;
+  }
+  .route .dots {
+    width: 90%;
+  }
+  .route .dots .dot {
+    font-size: 3vw;
+  }
+  .formContainer {
+    width: 60%;
+  }
+  .formContainer h2 {
+    font-size: 4vw;
+  }
+  .formContainer label {
+    font-size: 3vw;
+    margin-bottom: 20px;
+  }
+  .formContainer .next, .formContainer .submit {
+    width: 40%;
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .route {
+    width: 45%;
+  }
+  .route .dots {
+    width: 90%;
+  }
+  .route .dots .dot {
+    font-size: 3vw;
+  }
   .formContainer {
     width: 50%;
   }
@@ -140,7 +174,7 @@
 }
 @media screen and (max-width: 650px) {
   .formContainer {
-    width: 65%;
+    width: 75%;
   }
   .formContainer h2 {
     font-size: 7vw;
@@ -156,8 +190,11 @@
     width: 40%;
     font-size: 3vw;
   }
+  .formContainer input[type=text], .formContainer input[type=number], .formContainer input[type=email], .formContainer input[type=tel], .formContainer select {
+    font-size: 2vw;
+  }
   .route {
-    width: 90%;
+    width: 80%;
   }
   .route .dots {
     width: 90%;

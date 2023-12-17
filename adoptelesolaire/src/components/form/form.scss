@@ -122,6 +122,41 @@
 }
 
 @media screen and (max-width: 956px){
+    .route{
+        width: 50%;
+        .dots{
+            width: 90%;
+            .dot{
+                font-size: 3vw;
+            }
+        }
+    }
+    .formContainer{
+        width: 60%;
+        h2{
+            font-size: 4vw;
+        }
+        label{
+            font-size: 3vw;
+            margin-bottom: 20px;
+        }
+        .next, .submit{
+            width: 40%;
+            font-size: 1.5vw;
+        }
+    }
+    
+}
+@media screen and (max-width: 1400px){
+    .route{
+        width: 45%;
+        .dots{
+            width: 90%;
+            .dot{
+                font-size: 3vw;
+            }
+        }
+    }
     .formContainer{
         width: 50%;
         h2{
@@ -138,10 +173,9 @@
     }
     
 }
-
 @media screen and (max-width: 650px){
     .formContainer{
-        width: 65%;
+        width: 75%;
         h2{
             font-size: 7vw;
         }
@@ -156,9 +190,12 @@
             width: 40%;
             font-size: 3vw;
         }
+        input[type=text],input[type=number], input[type=email], input[type=tel], select{
+            font-size: 2vw;
+        }            
     }
     .route{
-        width: 90%;
+        width: 80%;
         .dots{
             width: 90%;
             .dot{

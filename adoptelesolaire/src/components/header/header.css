@@ -133,9 +133,10 @@ header .secondrow {
   }
 }
 @media screen and (max-width: 650px) {
+  header {
+    height: 8vh;
+  }
   header .frontrow {
-    margin-top: 10px;
-    margin-bottom: 10px;
     justify-content: center;
   }
   header .frontrow .title {
@@ -146,5 +147,10 @@ header .secondrow {
   }
   header .secondrow {
     justify-content: center;
+  }
+  .button {
+    height: 6vh;
+    width: 22vw;
+    font-size: 3vw;
   }
 }/*# sourceMappingURL=header.css.map */
