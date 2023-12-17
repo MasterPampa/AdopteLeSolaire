@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/AdopteLeSolaire/static/css/main.0cbd8446.css",
-    "main.js": "/AdopteLeSolaire/static/js/main.769314da.js",
+    "main.js": "/AdopteLeSolaire/static/js/main.dfa60866.js",
     "static/media/image3.png": "/AdopteLeSolaire/static/media/image3.2f24a1756109015531d0.png",
     "static/media/image1.png": "/AdopteLeSolaire/static/media/image1.97f6c3944ada98ae67ca.png",
     "static/media/image2.png": "/AdopteLeSolaire/static/media/image2.a8d1c2b1a106ca4a2cff.png",
     "static/media/testBackground.png": "/AdopteLeSolaire/static/media/testBackground.135c4e6051456429f33b.png",
     "index.html": "/AdopteLeSolaire/index.html",
     "main.0cbd8446.css.map": "/AdopteLeSolaire/static/css/main.0cbd8446.css.map",
-    "main.769314da.js.map": "/AdopteLeSolaire/static/js/main.769314da.js.map"
+    "main.dfa60866.js.map": "/AdopteLeSolaire/static/js/main.dfa60866.js.map"
   },
   "entrypoints": [
     "static/css/main.0cbd8446.css",
-    "static/js/main.769314da.js"
+    "static/js/main.dfa60866.js"
   ]
 }
