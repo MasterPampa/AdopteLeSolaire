@@ -55,10 +55,16 @@ function Form() {
   
     if (consotype === "2") {
       // Le montant de la facture mensuel en euro
-      consoValue = parseFloat(formData.consovalue);
+      consoValue = parseFloat(formData.consovalue)/0.2276*12;
     } else if (consotype === "1") {
       // La consommation en kWh mensuel
       consoValue = parseFloat(formData.consovalue) * 12;
+    } else if (consotype === "3") {
+      // La consommation en kWh annuelle
+      consoValue = parseFloat(formData.consovalue);
+    } else if (consotype === "4") {
+      // La consommation en euro annuelle
+      consoValue = parseFloat(formData.consovalue)/0.2276;
     } else {
       window.alert('Type de consommation non pris en charge.');
       return; // Quitte la fonction en cas de type de consommation non pris en charge
@@ -188,7 +194,7 @@ function Form() {
     <h2>Votre consommation</h2>
     <form onSubmit={handleNext} name='formulaire3'>
       <label>
-        Vous connaissez :
+        Vous connaissez votre consommation :
         <select
           name="consotype"
           value={formData.consotype}
@@ -197,7 +203,10 @@ function Form() {
           <option value="" disabled hidden>
             Sélectionnez une option
           </option>
-          <option value="1">Votre consommation en kWh mensuel</option>
+          <option value="1">En kWh mensuel</option>
+          <option value="2">En Euro mensuel</option>
+          <option value="3">Annuelle en kWh</option>
+          <option value="4">Annuelle en Euro</option>
         </select>
       </label>
 
@@ -221,6 +230,28 @@ function Form() {
             name="consovalue"
             value={formData.consovalue}
             placeholder="Montant mensuel en kWh"
+            onChange={handleChange}
+          />
+        </label>
+      )}
+      {formData.consotype === "3" && (
+        <label>
+          <input
+            type="number"
+            name="consovalue"
+            value={formData.consovalue}
+            placeholder="Montant annuelle en kWh"
+            onChange={handleChange}
+          />
+        </label>
+      )}
+      {formData.consotype === "4" && (
+        <label>
+          <input
+            type="number"
+            name="consovalue"
+            value={formData.consovalue}
+            placeholder="Montant annuelle en euro"
             onChange={handleChange}
           />
         </label>
