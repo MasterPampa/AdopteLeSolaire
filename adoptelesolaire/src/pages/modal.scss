@@ -100,3 +100,38 @@
         }
     }
 }
+
+@media screen and (max-width: 956px) {
+    .ma-modal{
+        width: 80%;
+        left: 10%;
+        justify-content: flex-start;
+        height: 75vh;
+        .menu{
+            display: none;
+        }
+        .modalContent{
+            flex-direction: column-reverse;
+            margin: 0;
+            height: 100%;
+            .contactContainer{
+                width: 70%;
+                margin-bottom: 20px;
+                height: 50%;
+                justify-content: space-evenly;
+                label{
+                    font-size: 3vw;
+                    input{
+                        font-size: 2.7vw;
+                    }
+                }
+                .submit{
+                    font-size: 2.5vw;
+                }
+                p, h4{
+                    font-size: 2.6vw;
+                }
+            }
+        }
+    }
+}

@@ -99,4 +99,39 @@
   border: 2px solid #fff;
   background-color: #79e053;
   cursor: pointer;
+}
+
+@media screen and (max-width: 956px) {
+  .ma-modal {
+    width: 80%;
+    left: 10%;
+    justify-content: flex-start;
+    height: 75vh;
+  }
+  .ma-modal .menu {
+    display: none;
+  }
+  .ma-modal .modalContent {
+    flex-direction: column-reverse;
+    margin: 0;
+    height: 100%;
+  }
+  .ma-modal .modalContent .contactContainer {
+    width: 70%;
+    margin-bottom: 20px;
+    height: 50%;
+    justify-content: space-evenly;
+  }
+  .ma-modal .modalContent .contactContainer label {
+    font-size: 3vw;
+  }
+  .ma-modal .modalContent .contactContainer label input {
+    font-size: 2.7vw;
+  }
+  .ma-modal .modalContent .contactContainer .submit {
+    font-size: 2.5vw;
+  }
+  .ma-modal .modalContent .contactContainer p, .ma-modal .modalContent .contactContainer h4 {
+    font-size: 2.6vw;
+  }
 }/*# sourceMappingURL=modal.css.map */

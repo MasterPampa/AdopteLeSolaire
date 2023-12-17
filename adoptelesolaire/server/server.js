@@ -40,7 +40,6 @@ app.post('/submit-form', async (req, res) => {
     
     // Traitement des données pour la première feuille
     const values = [[
-      req.body.name,
       req.body.address,
       req.body.surface,
       req.body.exposition,
@@ -48,6 +47,7 @@ app.post('/submit-form', async (req, res) => {
       req.body.consotype,
       req.body.consovalue,
       req.body.mail,
+      req.body.tel,
     ]];
 
     // Envoi des données à la première feuille de calcul

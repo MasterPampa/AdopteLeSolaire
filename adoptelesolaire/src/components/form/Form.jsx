@@ -4,7 +4,6 @@ import './form.css';
 function Form() {
   const [page, setPage] = useState(1);
   const [formData, setFormData] = useState({
-    name: "",
     address: "",
     surface: "",
     exposition: "",
@@ -12,6 +11,7 @@ function Form() {
     mail:"",
     consotype:"",
     consovalue:"",
+    tel:"",
   });
 
   const nextPage = () => {
@@ -134,16 +134,6 @@ function Form() {
             <h2>Votre estimation</h2>
             <form onSubmit={handleNext} name='formulaire'>
                 <label>
-                    Entrez votre nom :
-                    <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    placeholder='Nom prénom'
-                    onChange={handleChange}
-                    />
-                </label>
-                <label>
                     Entrez votre adresse :
                     <input
                     type="text"
@@ -213,30 +203,28 @@ function Form() {
 
       {/* Champ de saisie dynamique en fonction du choix de l'utilisateur */}
       {formData.consotype === "2" && (
-  <label>
-    <input
-      type="number"
-      name="consovalue"
-      value={formData.consovalue}
-      placeholder="Montant mensuel en euro"
-      onChange={handleChange}
-    />
-  </label>
-)}
+      <label>
+        <input
+          type="number"
+          name="consovalue"
+          value={formData.consovalue}
+          placeholder="Montant mensuel en euro"
+          onChange={handleChange}
+        />
+      </label>
+      )}
 
-{formData.consotype === "1" && (
-  <label>
-    <input
-      type="number"
-      name="consovalue"
-      value={formData.consovalue}
-      placeholder="Montant mensuel en kWh"
-      onChange={handleChange}
-    />
-  </label>
-)}
-
-
+      {formData.consotype === "1" && (
+        <label>
+          <input
+            type="number"
+            name="consovalue"
+            value={formData.consovalue}
+            placeholder="Montant mensuel en kWh"
+            onChange={handleChange}
+          />
+        </label>
+      )}
       <label className='carLabel'>
         Combien de véhicules électriques disposez-vous ? :
         <select
@@ -244,10 +232,13 @@ function Form() {
           value={formData.vehicules}
           onChange={handleChange}
         >
-          <option value="0 véhicules">0</option>
-          <option value="1 véhicules">1</option>
-          <option value="2 véhicules">2</option>
-          <option value="3 et + véhicules">3 et +</option>
+          <option value="" disabled hidden>
+            Sélectionnez une option
+          </option>
+          <option value="0 vehicules">0</option>
+          <option value="1 vehicules">1</option>
+          <option value="2 vehicules">2</option>
+          <option value="3 et + vehicules">3 et +</option>
         </select>
       </label>
       <input type='submit' value="Suivant" className='next'/>
@@ -270,7 +261,12 @@ function Form() {
                 </label>
                 <label>
                     Votre numéro de télephone :
-                    <input type ="tel" name="tel" maxLength="10" placeholder='Votre numéro de contact' /> 
+                    <input
+                      type ="tel"
+                      name="tel" maxLength="10"
+                      placeholder='Votre numéro de contact'
+                      onChange={handleChange}
+                    /> 
                 </label>
                 <input type='submit' value="Envoyer" className='submit'/>
             </form>
