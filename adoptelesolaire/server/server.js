@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 3001;
+const SECONDARY_RANGE = 'Feuille2';
 
 // Parse les données POST
 app.use(bodyParser.json());
@@ -36,6 +37,8 @@ app.post('/submit-form', async (req, res) => {
   try {
     const sheets = google.sheets({ version: 'v4', auth });
     console.log('Données reçues du client :', req.body);
+    
+    // Traitement des données pour la première feuille
     const values = [[
       req.body.name,
       req.body.address,
@@ -47,7 +50,7 @@ app.post('/submit-form', async (req, res) => {
       req.body.mail,
     ]];
 
-    // Envoi des données à Google Sheets
+    // Envoi des données à la première feuille de calcul
     await sheets.spreadsheets.values.append({
       spreadsheetId: SPREADSHEET_ID,
       range: RANGE,
@@ -55,7 +58,20 @@ app.post('/submit-form', async (req, res) => {
       resource: { values },
     });
 
-    
+    // Traitement des données pour la deuxième feuille
+    const secondaryValues = [[
+      req.body.tel,
+      req.body.postalCode,
+    ]];
+
+    // Envoi des données à la deuxième feuille de calcul
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: SPREADSHEET_ID,
+      range: SECONDARY_RANGE,
+      valueInputOption: 'RAW',
+      resource: { values: secondaryValues },
+    });
+
     res.status(200).send('Données enregistrées avec succès !');
   } catch (error) {
     console.error('Erreur lors de l\'enregistrement des données :', error);

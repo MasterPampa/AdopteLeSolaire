@@ -5,9 +5,8 @@
     align-items: center;
 }
 .route{
-    width: 65%;
+    width: 50%;
     height: 25vh;
-    background-color: rgba(0, 0, 0,0.7);
     margin-top: 50px;
     border-radius: 25px;
     display: flex;
@@ -19,12 +18,12 @@
         position: relative;
         .line{
             position: absolute;
-            width: 90%;
             left: 5%;
             height: 10px;
-            background-color: white;
+            background-color: #387AFB;
             top: 50px;
             z-index: 0;
+            transition: width 0.5s ease; /* A ajuster selon besoin (rapidité de l'agrandissement de la barre */
         }
         .dot{
             display: flex;
@@ -47,7 +46,6 @@
             color: white;
             font-size: 2.5vw;
             transform: translateY(-4px);
-
         }
     }
 }

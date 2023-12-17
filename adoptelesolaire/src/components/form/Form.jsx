@@ -121,7 +121,7 @@ function Form() {
     <span className="span">
     <div className='route'>
       <div className='dots'>
-        <span className='line'></span>
+      <span className='line' style={{ width: `${(page - 1) * 30}%` }}></span>
         <div className={`dot ${page === 1 ? 'selected' : ''}`}>1</div>
         <div className={`dot ${page === 2 ? 'selected' : ''}`}>2</div>
         <div className={`dot ${page === 3 ? 'selected' : ''}`}>3</div>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .span {
   width: 100%;
   display: flex;
@@ -6,9 +7,8 @@
 }
 
 .route {
-  width: 65%;
+  width: 50%;
   height: 25vh;
-  background-color: rgba(0, 0, 0, 0.7);
   margin-top: 50px;
   border-radius: 25px;
   display: flex;
@@ -22,12 +22,12 @@
 }
 .route .dots .line {
   position: absolute;
-  width: 90%;
   left: 5%;
   height: 10px;
-  background-color: white;
+  background-color: #387AFB;
   top: 50px;
   z-index: 0;
+  transition: width 0.5s ease; /* A ajuster selon besoin (rapidité de l'agrandissement de la barre */
 }
 .route .dots .dot {
   display: flex;
