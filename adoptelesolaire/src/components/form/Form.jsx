@@ -15,15 +15,32 @@ function Form() {
   });
 
   const nextPage = () => {
-    if(page < 4){
+    if (validateForm()) {
       setPage(page + 1);
+    } else {
+      window.alert('Veuillez remplir tous les champs obligatoires.');
     }
   };
+
+  const isEmailValid = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  
+  const isPhoneNumberValid = (phoneNumber) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phoneNumber);
+  };
+  
+  const [emailError, setEmailError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+
   const backPage = () => {
-    if(page > 1){
+    if (page > 1) {
       setPage(page - 1);
     }
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -31,10 +48,12 @@ function Form() {
       [name]: value
     });
   };
+
   const handleBack = (e) => {
     e.preventDefault();
     backPage();
-  }
+  };
+
   const handleNext = (e) => {
     e.preventDefault();
     nextPage();
@@ -42,6 +61,8 @@ function Form() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (validateForm()) {
     
     // Calculs basés sur les données du formulaire
     const pc = 3; // Puissance crête (3 kWc pour un kit classique)
@@ -83,36 +104,8 @@ function Form() {
   
     const gainEnEurosSurFacture = pourcentageEconomiesAvecContratEDF * consoValue * 0.2276 / 100;
     const amortissementAnnuel = ((gainEnEurosSurFacture + gainEurosReventeSurplus) / (6490 - 1530)) * 100;
-  
-    // Affichage des résultats dans la fenêtre d'alerte
-    window.alert(`
-    Production annuelle en kWh: ${Math.floor(productionAnnuelle)}
-    Taux d'autoconsommation en %: ${Math.floor(tacAvecPilotage)}
-    Potentiel de production autoconsommée en kWh: ${Math.floor(potentielAutoconsommation)}
-    Gain avec la revente de surplus à l'année en €: ${Math.abs(Math.floor(gainEurosReventeSurplus))}
-    Economies sur la facture annuelle en %: ${Math.floor(pourcentageEconomiesAvecContratEDF)}
-    Economies sur la facture à l'année en €: ${Math.floor(gainEnEurosSurFacture)}
-    Amortissement de l'installation sur l'année en %: ${Math.floor(amortissementAnnuel)}
-  `);
-  
-    try {
-      const response = await fetch('http://localhost:3001/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        console.log('Données envoyées avec succès.');
-      } else {
-        console.error('Erreur lors de l\'envoi des données.');
-      }
-    } catch (error) {
-      console.error('Erreur inattendue :', error);
-    }
 
+  
   // Affichage des résultats dans la console
   console.log('Production annuelle en kWh:', productionAnnuelle);
   console.log('Taux d\'autoconsommation:', tacAvecPilotage);
@@ -121,8 +114,54 @@ function Form() {
   console.log('Pourcentage d\'économies sur la facture annuelle:', pourcentageEconomiesAvecContratEDF);
   console.log('Gain en euros d\'économies sur la facture à l\'année:', gainEnEurosSurFacture);
   console.log('Amortissement de l\'installation sur l\'année:', amortissementAnnuel);
-  };
+  
+  try {
+    const response = await fetch('http://localhost:3001/submit-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
+    if (response.ok) {
+      console.log('Données envoyées avec succès.');
+    } else {
+      console.error('Erreur lors de l\'envoi des données.');
+    }
+  } catch (error) {
+    console.error('Erreur inattendue :', error);
+  }
+}else {
+  window.alert('Veuillez remplir tous les champs obligatoires.');
+};
+}
+
+
+const validateForm = () => {
+  switch (page) {
+    case 1:
+      return formData.address.trim() !== '';
+    case 2:
+      return formData.surface.trim() !== '' && formData.exposition.trim() !== '';
+    case 3:
+      return (
+        formData.consotype.trim() !== '' &&
+        formData.consovalue.trim() !== '' &&
+        formData.vehicules.trim() !== ''
+      );
+      case 4:
+        const isEmailValidFlag = isEmailValid(formData.mail);
+        const isPhoneNumberValidFlag = isPhoneNumberValid(formData.tel);
+  
+        setEmailError(isEmailValidFlag ? '' : 'Veuillez entrer une adresse e-mail valide.');
+        setPhoneError(isPhoneNumberValidFlag ? '' : 'Veuillez entrer un numéro de téléphone valide.');
+  
+        return isEmailValidFlag && isPhoneNumberValidFlag;
+      default:
+        return true;
+    }
+};
   return (
     <span className="span">
     <div className='route'>
@@ -175,6 +214,9 @@ function Form() {
                       value={formData.exposition}
                       onChange={handleChange}
                     >
+                        <option value="" disabled hidden>
+                          Sélectionnez une option
+                        </option>
                         <option value="0.75">Nord</option>
                         <option value="0.75">Nord-Est</option>
                         <option value="0.85">Est</option>
