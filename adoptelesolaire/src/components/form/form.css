@@ -24,7 +24,7 @@
   position: absolute;
   left: 5%;
   height: 10px;
-  background-color: #387AFB;
+  background-color: #3F91E8;
   top: 50px;
   z-index: 0;
   transition: width 0.5s ease; /* A ajuster selon besoin (rapidité de l'agrandissement de la barre */
@@ -43,13 +43,16 @@
   z-index: 0;
 }
 .route .dots .selected {
-  background-color: #387AFB;
+  position: relative;
+  background-color: #3F91E8;
   width: 65px;
   height: 65px;
   color: white;
   font-size: 2.5vw;
-  transform: translateY(-9px);
+  top: -9px;
   box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+  transition: all 0.5s ease-in-out;
 }
 
 .formContainer {
@@ -61,9 +64,12 @@
   padding: 20px;
   margin-top: -120px;
   margin-bottom: 20px;
-  background-color: #387AFB;
+  background-color: #3F91E8;
   border-radius: 7px;
   box-shadow: 3px 9px 12px rgba(0, 0, 0, 0.7);
+}
+.formContainer .carLabel {
+  font-size: 1.2vw;
 }
 .formContainer form {
   display: flex;
@@ -82,7 +88,7 @@
 .formContainer label {
   color: white;
   font-size: 1.6vw;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .formContainer input[type=text], .formContainer input[type=number], .formContainer input[type=email], .formContainer input[type=tel], .formContainer select {
   width: 100%;
