@@ -58,9 +58,12 @@ const Home = () => {
             <Footer />
 
             <ReactModal style={customStyles} isOpen={isModalOpen} onRequestClose={closeModal} className="ma-modal">
-                <h2 className='modalTitle'>Contactez-nous :</h2>
-                <div className='modalContent flexColumn'>
-                    <span className="">
+                <h2 className='modalTitle'>Nous contacter :</h2>
+                <div className="menu">
+                    <h3>Une question ? </h3><h3>On vous rappel : </h3>
+                </div>
+                <div className='modalContent'>
+                    <span className='contactContainer'>
                         <article className='contacts'>
                             <i class="fa-solid fa-phone fa-2xl"></i>
                             <p>01.50.51.52.53</p>

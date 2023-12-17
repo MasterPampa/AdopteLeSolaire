@@ -21,29 +21,27 @@ const ContactForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Votre numéro de téléphone :
-        <input
-          type="tel"
-          name="tel"
-          value={formData.tel}
-          placeholder="Votre numéro de contact"
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Votre code postal :
-        <input
-          type="text"
-          name="postalCode"
-          value={formData.postalCode}
-          placeholder="Votre code postal"
-          onChange={handleChange}
-        />
-      </label>
-      <input type="submit" value="Envoyer" />
-    </form>
+        <form className="contactContainer colorBox" onSubmit={handleSubmit}>
+            <label>
+                Votre numéro de téléphone* :
+                <input
+                type="tel"
+                name="tel"
+                value={formData.tel}
+                onChange={handleChange}
+                />
+            </label>
+            <label>
+                Votre code postal* :
+                <input
+                type="text"
+                name="postalCode"
+                value={formData.postalCode}
+                onChange={handleChange}
+                />
+            </label>
+            <input type="submit" className='submit' value="Envoyer" />
+        </form>
   );
 };
 
