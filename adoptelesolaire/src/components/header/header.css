@@ -42,7 +42,7 @@ header .frontrow .buttons .button2 {
   background-color: white;
   height: 60px;
   width: 170px;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -78,7 +78,7 @@ header .secondrow {
   background-color: #528FEB;
   height: 60px;
   width: 170px;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 0 0 0 0 rgb(0, 0, 0);
   transform: scale(1);
   animation: pulse 2s infinite;
