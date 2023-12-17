@@ -128,6 +128,10 @@
   cursor: pointer;
 }
 
+.opacity {
+  opacity: 0.3;
+}
+
 @media screen and (max-width: 956px) {
   .route {
     width: 50%;
