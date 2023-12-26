@@ -1,4 +1,5 @@
 import './header.css'
+import { Link } from 'react-router-dom';
 
 function Header({ openModal }) {
 
@@ -25,7 +26,7 @@ return (
   <header>
     <div className="frontrow">
       <div className="title">
-        <h1>AdopteLeSolaire.fr</h1>
+        <Link className='link' to="/"><h1>AdopteLeSolaire.fr</h1></Link>
       </div>
       <div className='secondrow'>
         <div className='buttons'>

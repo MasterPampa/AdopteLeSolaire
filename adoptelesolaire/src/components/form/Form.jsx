@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './form.css';
+import { useNavigate } from 'react-router-dom';
 
 function Form() {
+
+  const navigate = useNavigate();
+
   const [page, setPage] = useState(1);
   const [formData, setFormData] = useState({
     address: "",
@@ -126,6 +130,19 @@ function Form() {
 
     if (response.ok) {
       console.log('Données envoyées avec succès.');
+      navigate('/results', {
+        state: {
+          productionAnnuelle,
+          consoValue,
+          tacAvecPilotage,
+          potentielAutoconsommation,
+          gainReventeSurplus,
+          gainEurosReventeSurplus,
+          pourcentageEconomiesAvecContratEDF,
+          gainEnEurosSurFacture,
+          amortissementAnnuel,
+        },
+      });
     } else {
       console.error('Erreur lors de l\'envoi des données.');
     }

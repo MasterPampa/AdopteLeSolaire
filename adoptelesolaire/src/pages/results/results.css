@@ -1,0 +1,84 @@
+.resultContainer {
+  width: 100%;
+  height: 74vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  gap: 30px;
+}
+.resultContainer .resultBox {
+  width: 30%;
+  height: 80%;
+  background-color: white;
+  box-shadow: 3px 9px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+}
+.resultContainer .cardsContainer {
+  width: 35%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+.resultContainer .cardsContainer .cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+  border-radius: 7px;
+  box-shadow: 10px 9px 12px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  transition: all 0.1s ease-out;
+}
+.resultContainer .cardsContainer .cards h3 {
+  margin-top: 10px;
+  font-size: 1.6vw;
+}
+.resultContainer .cardsContainer .cards .cardsInfo {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.resultContainer .cardsContainer .cards .cardsInfo .info {
+  width: 28%;
+  height: 100%;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.resultContainer .cardsContainer .cards .cardsInfo span {
+  width: 2px;
+  height: 80%;
+  background-color: black;
+}
+.resultContainer .cardsContainer .cards .cardsInfo h4 {
+  font-size: 1vw;
+}
+.resultContainer .cardsContainer .cards .cardsInfo p {
+  font-size: 1.2vw;
+}
+.resultContainer .cardsContainer .selected {
+  background-color: #3F91E8;
+  animation: pulse 3s infinite;
+  color: white;
+}
+.resultContainer .cardsContainer .selected p {
+  color: greenyellow;
+}
+.resultContainer .cardsContainer .selected .cardsInfo span {
+  background-color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=results.css.map */

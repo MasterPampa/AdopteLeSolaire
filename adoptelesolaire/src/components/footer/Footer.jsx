@@ -8,7 +8,6 @@ function Footer() {
                 <div className="links flexColumn">
                     <a href='#'>Mentions légales</a>
                     <a href='#'>Politique de confidentialité</a>
-                    <a href='#'>Contact</a>
                 </div>
             </div>
             <div className="rightSide">
