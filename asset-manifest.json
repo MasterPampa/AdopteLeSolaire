@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/AdopteLeSolaire/static/css/main.c2648559.css",
+    "main.css": "/AdopteLeSolaire/static/css/main.8d75ee22.css",
     "main.js": "/AdopteLeSolaire/static/js/main.22ebe684.js",
     "static/media/image3.png": "/AdopteLeSolaire/static/media/image3.2f24a1756109015531d0.png",
     "static/media/image1.png": "/AdopteLeSolaire/static/media/image1.97f6c3944ada98ae67ca.png",
@@ -12,11 +12,11 @@
     "static/media/battery.jpg": "/AdopteLeSolaire/static/media/battery.2492062078110550db51.jpg",
     "static/media/testBackground.png": "/AdopteLeSolaire/static/media/testBackground.135c4e6051456429f33b.png",
     "index.html": "/AdopteLeSolaire/index.html",
-    "main.c2648559.css.map": "/AdopteLeSolaire/static/css/main.c2648559.css.map",
+    "main.8d75ee22.css.map": "/AdopteLeSolaire/static/css/main.8d75ee22.css.map",
     "main.22ebe684.js.map": "/AdopteLeSolaire/static/js/main.22ebe684.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2648559.css",
+    "static/css/main.8d75ee22.css",
     "static/js/main.22ebe684.js"
   ]
 }
