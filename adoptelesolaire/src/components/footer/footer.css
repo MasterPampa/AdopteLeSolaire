@@ -1,9 +1,10 @@
 footer {
   width: 100%;
-  height: 14vh;
+  height: 12vh;
   background-color: #FBB938;
   display: flex;
   justify-content: center;
+  padding-bottom: 18px;
 }
 footer .leftSide {
   text-align: center;
@@ -11,15 +12,14 @@ footer .leftSide {
   width: 50%;
 }
 footer .leftSide h3 {
-  font-size: 2.2vw;
+  font-size: 1.8vw;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 footer .leftSide .links {
-  margin-top: 10px;
   width: 30%;
   text-align: start;
-  font-size: 1.1vw;
+  font-size: 1vw;
 }
 footer .leftSide .links a {
   color: black;
@@ -32,7 +32,7 @@ footer .rightSide .socials {
   flex-direction: column;
 }
 footer .rightSide .socials p {
-  font-size: 1.6vw;
+  font-size: 1.4vw;
 }
 footer .rightSide .socials a {
   margin-left: 20px;

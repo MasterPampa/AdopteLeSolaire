@@ -1,24 +1,23 @@
 footer{
     width: 100%;
-    height: 14vh;
+    height: 12vh;
     background-color: #FBB938;
     display: flex;
     justify-content: center;
-
+    padding-bottom: 18px;
     .leftSide{
         text-align: center;
         align-items: center;
         width: 50%;
         h3{
-            font-size: 2.2vw;
+            font-size: 1.8vw;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         .links{
-            margin-top: 10px;
             width: 30%;
             text-align: start;
-            font-size: 1.1vw;
+            font-size: 1vw;
             a{
                 color: black;
             }
@@ -31,7 +30,7 @@ footer{
         .socials{
             flex-direction: column;
             p{
-                font-size: 1.6vw;
+                font-size: 1.4vw;
             }
             a{
                 margin-left: 20px;

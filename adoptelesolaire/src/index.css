@@ -24,6 +24,12 @@ main {
   flex-direction: column;
 }
 
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .flexBetween {
   display: flex;
   flex-direction: row;

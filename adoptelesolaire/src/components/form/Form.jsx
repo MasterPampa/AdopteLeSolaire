@@ -109,6 +109,7 @@ function Form() {
     const gainEnEurosSurFacture = pourcentageEconomiesAvecContratEDF * consoValue * 0.2276 / 100;
     const amortissementAnnuel = ((gainEnEurosSurFacture + gainEurosReventeSurplus) / (6490 - 1530)) * 100;
 
+    const surface = formData.surface;
   
   // Affichage des résultats dans la console
   console.log('Production annuelle en kWh:', productionAnnuelle);
@@ -141,6 +142,7 @@ function Form() {
           pourcentageEconomiesAvecContratEDF,
           gainEnEurosSurFacture,
           amortissementAnnuel,
+          surface,
         },
       });
     } else {
