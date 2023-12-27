@@ -131,7 +131,7 @@ function Form() {
 
     if (response.ok) {
       console.log('Données envoyées avec succès.');
-      navigate('/AdopteLeSolaire/Results', {
+      navigate('/results', {
         state: {
           productionAnnuelle,
           consoValue,

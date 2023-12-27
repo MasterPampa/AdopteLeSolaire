@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Results from './pages/results/Results';
 import './index.css';
 
-const App = () => {
-  return (
-    <Router>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <HashRouter>
       <Routes>
-        <Route path="/AdopteLeSolaire" element={<Home />} />
-        <Route path="./Results" element={<Results />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/results" element={<Results />} />
+        <Route exact path="*" element={<Home />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
-};
-
-ReactDOM.render(<App />, document.getElementById('root'));
