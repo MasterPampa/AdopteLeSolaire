@@ -24,6 +24,7 @@ function ResultsDisplay() {
 
   return (
     <div className="resultContainer">
+      <span className='loading'></span>
       <div className="resultData">
         <div className='resultDataContainer'>
           <h2>Basée sur vos données</h2>

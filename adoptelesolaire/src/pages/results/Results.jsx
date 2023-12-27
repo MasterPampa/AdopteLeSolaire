@@ -7,6 +7,7 @@ import ResultsDisplay from '../../components/resultsDisplay/ResultsDisplay';
 import { useState } from 'react';
 import ContactForm from "../../components/contactForm/ContactForm"
 import './results.css'
+import Sun from '../../images/sun.jpg'
 
 function Results() {
 
@@ -51,6 +52,12 @@ function Results() {
 
     return ( 
         <div>
+            <span className='loading'>
+                <h2>Chargement de vos résultats...</h2>
+                <div class="gear">
+                    <img src={Sun} alt="loading Sun" />
+                </div>
+            </span>
             <ReactModal style={customStyles} isOpen={isModalOpen} onRequestClose={closeModal} className="ma-modal">
                 <h2 className='modalTitle'>Nous contacter :</h2>
                 <div className="menu">
