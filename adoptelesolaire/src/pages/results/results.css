@@ -24,7 +24,8 @@
 }
 .resultContainer .resultData .resultDataContainer h2 {
   height: 10%;
-  margin-top: 10px;
+  padding-top: 20px;
+  font-size: 25px;
 }
 .resultContainer .resultData .resultDataContainer .list {
   height: 90%;
@@ -49,12 +50,12 @@
   align-self: center;
 }
 .resultContainer .resultData .resultDataContainer .list .details .detailsText p {
-  font-size: 1.2vw;
+  font-size: 1.5vw;
   font-weight: bold;
 }
 .resultContainer .resultData .resultDataContainer .list .details .detailsText h3 {
   color: #3F91E8;
-  font-size: 1.4vw;
+  font-size: 25px;
 }
 .resultContainer .resultData .resultDataContainer .list .details .resultImage {
   max-width: 25%;
@@ -80,7 +81,7 @@
 }
 .resultContainer .cardsContainer .cards h3 {
   margin-top: 10px;
-  font-size: 1.6vw;
+  font-size: 25px;
 }
 .resultContainer .cardsContainer .cards .cardsInfo {
   margin-top: 10px;
@@ -93,20 +94,25 @@
   width: 28%;
   height: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 .resultContainer .cardsContainer .cards .cardsInfo .info h4 {
   margin-bottom: 10px;
-  font-size: 0.8vw;
+  font-size: 13px;
 }
 .resultContainer .cardsContainer .cards .cardsInfo .info p {
-  font-size: 1.4vw;
+  font-size: 1.8vw;
   font-weight: bold;
 }
 .resultContainer .cardsContainer .cards .cardsInfo span {
   width: 4px;
-  height: 80%;
+  height: 50%;
   background-color: grey;
   border-radius: 10px;
+  align-self: center;
 }
 .resultContainer .cardsContainer .selected {
   background-color: #3F91E8;
@@ -143,6 +149,11 @@
   align-items: center;
   flex-direction: column;
 }
+.loading h2 {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
 .loading .gear img {
   margin-top: 20px;
   width: 100px;
@@ -153,12 +164,14 @@
 @keyframes loading {
   0% {
     opacity: 1;
+    z-index: 999999;
   }
   99% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+    z-index: -100;
     display: none;
   }
 }
@@ -182,5 +195,73 @@
   }
   100% {
     box-shadow: 0 0 0 0 rgba(0, 150, 255, 0);
+  }
+}
+@media screen and (max-width: 956px) {
+  .resultContainer .cardsContainer .cards .cardsInfo .info h4 {
+    font-size: 10px;
+  }
+  .resultContainer .cardsContainer .cards .cardsInfo .info p {
+    font-size: 20px;
+  }
+  .resultContainer .cardsContainer .cards h3 {
+    font-size: 20px;
+  }
+  .resultContainer .cardsContainer .cards {
+    height: 27%;
+  }
+  .resultContainer .resultData .resultDataContainer h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 770px) {
+  .resultContainer {
+    flex-direction: column;
+    height: auto;
+  }
+  .resultContainer .resultData {
+    margin-top: 50px;
+    width: 90%;
+    height: 50vh;
+  }
+  .resultContainer .resultData .resultDataContainer .list .details {
+    justify-content: space-evenly;
+  }
+  .resultContainer .resultData .resultDataContainer .list .details .detailsText {
+    width: 60%;
+  }
+  .resultContainer .resultData .resultDataContainer .list .details .resultImage {
+    max-width: 18%;
+  }
+  .resultContainer .cardsContainer {
+    width: 80%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .resultContainer .cardsContainer .cards {
+    height: 180px;
+    margin-bottom: 50px;
+  }
+  .resultContainer .cardsContainer .cards .cardsInfo .info h4 {
+    font-size: 1.3vw;
+  }
+  .resultContainer .cardsContainer .cards .cardsInfo .info h4 {
+    font-size: 15px;
+  }
+  .resultContainer .resultData .resultDataContainer .list .details .detailsText p {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 540px) {
+  .resultContainer .resultData .resultDataContainer .list .details .resultImage {
+    max-width: 28%;
+  }
+  .resultContainer .cardsContainer .cards .cardsInfo .info h4 {
+    font-size: 10px;
+  }
+  .resultContainer .resultData .resultDataContainer .list .details .detailsText p {
+    font-size: 15px;
   }
 }/*# sourceMappingURL=results.css.map */

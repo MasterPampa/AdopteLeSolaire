@@ -21,7 +21,8 @@
             flex-direction: column;
             h2{
                 height: 10%;
-                margin-top: 10px;
+                padding-top: 20px;
+                font-size: 25px;
             }
             .list{
                 height: 90%;
@@ -43,12 +44,12 @@
                             align-self: center;
                         }
                         p{
-                            font-size: 1.2vw;
+                            font-size: 1.5vw;
                             font-weight: bold;
                         }
                         h3{
                             color: #3F91E8;
-                            font-size: 1.4vw;
+                            font-size: 25px;
                         }
                     }
                     .resultImage{
@@ -77,7 +78,7 @@
             transition: all 0.1s ease-out;
             h3{
                 margin-top: 10px;
-                font-size: 1.6vw;
+                font-size: 25px;
             }
             .cardsInfo{
                 margin-top: 10px;
@@ -89,20 +90,25 @@
                     width: 28%;
                     height: 100%;
                     text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 10px;
                     h4{
                         margin-bottom: 10px;
-                        font-size: 0.8vw;
+                        font-size: 13px;
                     }
                     p{
-                        font-size: 1.4vw;
+                        font-size: 1.8vw;
                         font-weight: bold;
                     }
                 }
                 span{
                     width: 4px;
-                    height: 80%;
+                    height: 50%;
                     background-color: grey;
                     border-radius: 10px;
+                    align-self: center;
                 }
             }
         }
@@ -144,6 +150,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    h2{
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+    }
     .gear{
         img{
             margin-top: 20px;
@@ -191,4 +202,73 @@
     100% {
         box-shadow: 0 0 0 0 rgba(0, 150, 255, 0);
     }
+}
+
+
+@media screen and (max-width: 956px){
+    .resultContainer .cardsContainer .cards .cardsInfo .info h4 {font-size: 10px;}
+    .resultContainer .cardsContainer .cards .cardsInfo .info p {font-size: 20px;}
+    .resultContainer .cardsContainer .cards h3 {font-size: 20px;}
+    .resultContainer .cardsContainer .cards {height: 27%;} 
+    .resultContainer .resultData .resultDataContainer h2 {font-size: 25px; text-align: center;}
+}
+@media screen and (max-width: 770px){
+    .resultContainer{
+        flex-direction: column; 
+        height: auto;
+        .resultData{
+            margin-top: 50px;
+            width: 90%;
+            height: 50vh;
+            .resultDataContainer{
+                .list{
+                    .details{
+                        justify-content: space-evenly;
+                        .detailsText{
+                            width: 60%;
+                        }
+                        .resultImage{
+                            max-width: 18%;
+                        }
+                    }
+                }
+            }
+        }
+        .cardsContainer{
+            width: 80%;
+            height: auto;
+            margin-bottom: 30px;
+            .cards{
+                height: 180px;
+                margin-bottom: 50px;
+
+                .cardsInfo{
+                    .info{
+                        h4 {font-size: 1.3vw;}
+                    }
+                }
+            }
+        }
+    }
+    .resultContainer .cardsContainer .cards .cardsInfo .info h4 {
+        font-size: 15px;
+    }
+    .resultContainer .resultData .resultDataContainer .list .details .detailsText p {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 540px){
+
+.resultContainer .resultData .resultDataContainer .list .details .resultImage {
+    max-width: 28%;
+}
+.resultContainer .cardsContainer .cards .cardsInfo .info h4 {
+    font-size: 10px;
+}
+
+.resultContainer .resultData .resultDataContainer .list .details .detailsText p {
+    font-size: 15px;
+}
 }

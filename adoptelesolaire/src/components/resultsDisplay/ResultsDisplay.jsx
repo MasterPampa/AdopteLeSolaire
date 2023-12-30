@@ -24,7 +24,6 @@ function ResultsDisplay() {
 
   return (
     <div className="resultContainer">
-      <span className='loading'></span>
       <div className="resultData">
         <div className='resultDataContainer'>
           <h2>Basée sur vos données</h2>
@@ -39,14 +38,14 @@ function ResultsDisplay() {
             <div className="details">
               <img src={Battery} alt="Panneau solaire" className='resultImage' />
               <div className="detailsText">
-                <p>Potentiel production par an :</p>
+                <p>Potentiel production par an</p>
                 <h3>{Math.floor(productionAnnuelle)} kWh</h3>
               </div>
             </div>
             <div className="details">
               <img src={Plug} alt="Panneau solaire" className='resultImage' />
               <div className="detailsText">
-                <p>Autoconsommation :</p>
+                <p>Autoconsommation</p>
                 <h3>{Math.floor(tacAvecPilotage)} %</h3>
               </div>
             </div>

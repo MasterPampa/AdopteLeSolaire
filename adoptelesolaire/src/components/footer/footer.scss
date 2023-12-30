@@ -47,9 +47,13 @@ footer{
     footer{
         padding-bottom: 40px;
         .leftSide{
+            h3{
+                font-size: 20px;
+            }
+            justify-content: space-evenly;
             .links{
-                font-size: 1.4vw;
                 text-wrap: nowrap;
+                font-size: 15px;
             }
         }
     }
@@ -59,25 +63,27 @@ footer{
     footer{
         flex-direction: column-reverse;
         align-items: center;
+        height: auto;
+        padding-bottom: 10px;
         .leftSide{
             flex-direction: column-reverse;
             width: 100%;
             h3{
-                font-size: 7vw;
+                font-size: 20px;
             }
             .links{
-                font-size: 4vw;
+                font-size: 15px;
                 width: 100%;
                 text-align: center;
             }
         }
         .rightSide{
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             .socials{
                 width: 100%;
                 p{
-                    font-size: 4vw;
+                    font-size: 15px;
                 }
             }
         }
