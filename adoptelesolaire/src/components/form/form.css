@@ -8,11 +8,10 @@
 
 .route {
   width: 40%;
-  height: 25vh;
-  margin-top: 20px;
   border-radius: 25px;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .route .dots {
   display: flex;
@@ -62,7 +61,6 @@
   justify-content: center;
   width: 35%;
   padding: 20px;
-  margin-top: -120px;
   margin-bottom: 20px;
   background-color: white;
   border-radius: 7px;
@@ -211,5 +209,14 @@
   }
   .route .dots .dot {
     font-size: 4vw;
+    width: 50px;
+    height: 50px;
+  }
+  .route .dots .selected {
+    top: -1px;
+  }
+  .route .dots .line {
+    height: 7px;
+    top: 52px;
   }
 }/*# sourceMappingURL=form.css.map */
