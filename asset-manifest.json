@@ -1,22 +1,27 @@
 {
   "files": {
     "main.css": "/AdopteLeSolaire/static/css/main.f001380c.css",
-    "main.js": "/AdopteLeSolaire/static/js/main.f310d96d.js",
+    "main.js": "/AdopteLeSolaire/static/js/main.466a7c4e.js",
+    "static/js/498.4d02edbc.chunk.js": "/AdopteLeSolaire/static/js/498.4d02edbc.chunk.js",
+    "static/js/703.ca4bb4c9.chunk.js": "/AdopteLeSolaire/static/js/703.ca4bb4c9.chunk.js",
+    "static/js/379.806df4af.chunk.js": "/AdopteLeSolaire/static/js/379.806df4af.chunk.js",
     "static/media/image3.png": "/AdopteLeSolaire/static/media/image3.2f24a1756109015531d0.png",
     "static/media/image1.png": "/AdopteLeSolaire/static/media/image1.97f6c3944ada98ae67ca.png",
     "static/media/image2.png": "/AdopteLeSolaire/static/media/image2.a8d1c2b1a106ca4a2cff.png",
     "static/media/house.jpg": "/AdopteLeSolaire/static/media/house.77d822a6d35f81742bd4.jpg",
-    "static/media/solar.jpg": "/AdopteLeSolaire/static/media/solar.3c40a525d423282345e9.jpg",
     "static/media/plug.jpg": "/AdopteLeSolaire/static/media/plug.a497c475a38d264f8001.jpg",
     "static/media/sun.jpg": "/AdopteLeSolaire/static/media/sun.3bea1a43e93189ebbe4a.jpg",
     "static/media/battery.jpg": "/AdopteLeSolaire/static/media/battery.2492062078110550db51.jpg",
     "static/media/testBackground.png": "/AdopteLeSolaire/static/media/testBackground.135c4e6051456429f33b.png",
     "index.html": "/AdopteLeSolaire/index.html",
     "main.f001380c.css.map": "/AdopteLeSolaire/static/css/main.f001380c.css.map",
-    "main.f310d96d.js.map": "/AdopteLeSolaire/static/js/main.f310d96d.js.map"
+    "main.466a7c4e.js.map": "/AdopteLeSolaire/static/js/main.466a7c4e.js.map",
+    "498.4d02edbc.chunk.js.map": "/AdopteLeSolaire/static/js/498.4d02edbc.chunk.js.map",
+    "703.ca4bb4c9.chunk.js.map": "/AdopteLeSolaire/static/js/703.ca4bb4c9.chunk.js.map",
+    "379.806df4af.chunk.js.map": "/AdopteLeSolaire/static/js/379.806df4af.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f001380c.css",
-    "static/js/main.f310d96d.js"
+    "static/js/main.466a7c4e.js"
   ]
 }
