@@ -111,7 +111,7 @@ $mainBlue : #3F91E8;
         transition: all 0.2s ease-in;
         font-size: 1vw;
         font-weight: bold;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         &:hover{
             border: 2px solid #fff;
             cursor: pointer;
@@ -121,12 +121,32 @@ $mainBlue : #3F91E8;
         position: absolute;
         bottom: 20px;
         left: 20px;
-        color: white;
+        color: $mainBlue;
+        border-radius: 5px;
+        width: 50px;
         cursor: pointer;
       }
 }
 .opacity{
     opacity: 0.3;
+}
+.formContainer form{
+    .consent{
+        flex-direction: row;
+        width: 90%;
+        color: black;
+        display: flex;
+        align-self: center;
+        font-size: 2.2vw;
+    }
+    input{
+        width: 10%;
+    }
+}
+.mention {
+    font-size: 0.9vw;
+    text-align: center;
+    margin-bottom: 20px;
 }
 @media screen and (max-width: 956px){
     .route{
@@ -165,7 +185,7 @@ $mainBlue : #3F91E8;
         }
     }
     .formContainer{
-        width: 50%;
+        width: 60%;
         h2{
             font-size: 4vw;
         }
@@ -199,7 +219,16 @@ $mainBlue : #3F91E8;
         }
         input[type=text],input[type=number], input[type=email], input[type=tel], select{
             font-size: 2vw;
-        }            
+        }      
+        .backButton{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: $mainBlue;
+            border-radius: 5px;
+            width: 50px;
+            cursor: pointer;
+          }      
     }
     .route{
         width: 80%;
@@ -219,4 +248,20 @@ $mainBlue : #3F91E8;
             }
         }
     }
+    .formContainer form{
+        .consent{
+            flex-direction: row;
+            width: 90%;
+            font-size: 5vw;
+            
+        }
+        input{
+            width: 15%;
+        }
+    }
+    .mention{
+        font-size: 10px;  
+    }
+    
 }
+

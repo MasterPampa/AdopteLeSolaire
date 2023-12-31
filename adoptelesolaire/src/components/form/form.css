@@ -112,7 +112,7 @@
   transition: all 0.2s ease-in;
   font-size: 1vw;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .formContainer .next:hover, .formContainer .submit:hover {
   border: 2px solid #fff;
@@ -122,12 +122,32 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
-  color: white;
+  color: #3F91E8;
+  border-radius: 5px;
+  width: 50px;
   cursor: pointer;
 }
 
 .opacity {
   opacity: 0.3;
+}
+
+.formContainer form .consent {
+  flex-direction: row;
+  width: 90%;
+  color: black;
+  display: flex;
+  align-self: center;
+  font-size: 2.2vw;
+}
+.formContainer form input {
+  width: 10%;
+}
+
+.mention {
+  font-size: 0.9vw;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 956px) {
@@ -166,7 +186,7 @@
     font-size: 3vw;
   }
   .formContainer {
-    width: 50%;
+    width: 60%;
   }
   .formContainer h2 {
     font-size: 4vw;
@@ -201,6 +221,15 @@
   .formContainer input[type=text], .formContainer input[type=number], .formContainer input[type=email], .formContainer input[type=tel], .formContainer select {
     font-size: 2vw;
   }
+  .formContainer .backButton {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #3F91E8;
+    border-radius: 5px;
+    width: 50px;
+    cursor: pointer;
+  }
   .route {
     width: 80%;
   }
@@ -218,5 +247,16 @@
   .route .dots .line {
     height: 7px;
     top: 52px;
+  }
+  .formContainer form .consent {
+    flex-direction: row;
+    width: 90%;
+    font-size: 5vw;
+  }
+  .formContainer form input {
+    width: 15%;
+  }
+  .mention {
+    font-size: 10px;
   }
 }/*# sourceMappingURL=form.css.map */
