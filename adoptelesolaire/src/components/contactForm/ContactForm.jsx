@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 const ContactForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
-    tel: '',
-    postalCode: '',
+    phone: '',
+    postalAdress: '',
   });
 
   const handleChange = (e) => {
@@ -26,8 +26,8 @@ const ContactForm = ({ onSubmit }) => {
                 Votre numéro de téléphone* :
                 <input
                 type="tel"
-                name="tel"
-                value={formData.tel}
+                name="phone"
+                value={formData.phone}
                 onChange={handleChange}
                 />
             </label>
@@ -35,8 +35,8 @@ const ContactForm = ({ onSubmit }) => {
                 Votre code postal* :
                 <input
                 type="text"
-                name="postalCode"
-                value={formData.postalCode}
+                name="postalAdress"
+                value={formData.postalAdress}
                 onChange={handleChange}
                 />
             </label>
