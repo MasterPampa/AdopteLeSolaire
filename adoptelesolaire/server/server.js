@@ -2,6 +2,7 @@ const express = require('express');
 const { google } = require('googleapis');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = 3001;
@@ -32,7 +33,47 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Endpoint pour gérer les données du formulaire
+app.use(express.json());
+
+app.post('/api/send-email', async (req, res) => {
+  const { pdfBase64, otherData } = req.body;
+  const recipientEmail = formData.mail;
+  // Créez un transporteur nodemailer (configurez-le en fonction de vos besoins)
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'styven.munhurrun@gmail.com',
+      pass: 'Phaolan05',
+    },
+  });
+
+  // Définissez les options de l'e-mail
+  const mailOptions = {
+    from: transporter,
+    to: recipientEmail,
+    subject: 'Votre simulation personalisée',
+    text: 'Contenu du message...',
+    attachments: [
+      {
+        filename: 'resultat.pdf',
+        content: pdfBase64.split(';base64,').pop(), // Retirez la partie 'data:application/pdf;base64,'
+        encoding: 'base64',
+      },
+    ],
+  };
+
+  // Envoyez l'e-mail
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).send('E-mail envoyé avec succès !');
+    console.log(recipientEmail);
+
+  } catch (error) {
+    console.error('Erreur lors de l\'envoi de l\'e-mail :', error);
+    res.status(500).send('Erreur lors de l\'envoi de l\'e-mail.');
+  }
+});
+
 app.post('/submit-form', async (req, res) => {
   try {
     const sheets = google.sheets({ version: 'v4', auth });
@@ -79,7 +120,7 @@ app.post('/submit-form', async (req, res) => {
   }
 });
 
-// Démarrer le serveur
+// Utilisez un seul appel à app.listen
 app.listen(PORT, () => {
   console.log(`Serveur démarré sur le port ${PORT}`);
 });
