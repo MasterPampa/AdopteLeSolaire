@@ -16,7 +16,6 @@ const ContactForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Vous pouvez effectuer des validations supplémentaires ici si nécessaire
     onSubmit(formData);
   };
 

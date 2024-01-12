@@ -8,7 +8,7 @@ function Pins({ openModal }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-      setIsVisible(scrollY > 50); // Choisissez la valeur appropriée pour déterminer quand afficher les pins
+      setIsVisible(scrollY > 50); 
     };
 
     window.addEventListener('scroll', handleScroll);

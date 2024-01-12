@@ -8,12 +8,16 @@ import { useState } from 'react';
 import ContactForm from "../../components/contactForm/ContactForm"
 import './results.css'
 import Sun from '../../images/sun.jpg'
+import { useLocation } from 'react-router-dom';
 
 function Results() {
+   
+    const location = useLocation();
+    const calculatedResults = location.state && location.state.calculatedResults;
 
     const handleContactFormSubmit = async (formData) => {
         try {
-          const response = await fetch('http://localhost:3001/submit-form', {
+          const response = await fetch('https://adoptelesolaire.fr/api/submit-form', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -54,7 +58,7 @@ function Results() {
         <div>
             <span className='loading'>
                 <h2>Chargement de vos résultats...</h2>
-                <div class="gear">
+                <div className="gear">
                     <img src={Sun} alt="loading Sun" />
                 </div>
             </span>
@@ -88,7 +92,7 @@ function Results() {
             <Header openModal={openModal} />
             <Pins openModal={openModal} />
             <main>
-                <ResultsDisplay />
+                <ResultsDisplay calculatedResults={calculatedResults}/>
             </main>
             <Footer /> 
         </div>

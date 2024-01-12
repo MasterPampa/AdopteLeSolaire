@@ -19,19 +19,18 @@ const handleScroll = () => {
   }
 };
 
-// Écoutez l'événement de scroll
 window.addEventListener('scroll', handleScroll);
 
 return (
   <header>
     <div className="frontrow">
       <div className="title">
-        <Link className='link' to="/"><h1>AdopteLeSolaire.fr</h1></Link>
+        <Link className='link' to="/#"><h1>AdopteLeSolaire.fr</h1></Link>
       </div>
       <div className='secondrow'>
         <div className='buttons'>
-          <div href="#" className="contact button2" onClick={openModal}>Contactez-nous</div>
-          <div href="#" onClick={scrollToTop} className="simulator button">Simulateur</div>
+          <div className="contact button2" onClick={openModal}>Contactez-nous</div>
+          <div onClick={scrollToTop} className="simulator button">Simulateur</div>
         </div>
       </div>
     </div>

@@ -20,17 +20,16 @@
 .articleContainer .imageContent {
   display: flex;
   justify-content: center;
-  width: 40%;
+  width: 30%;
 }
 .articleContainer .imageContent img {
-  max-width: 50%;
-  overflow: visible;
-  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
 }
 
 article {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 60px 0;
 }
 
@@ -46,7 +45,7 @@ article {
     align-items: center;
   }
   .articleContainer .impair .imageContent, .articleContainer .pair .imageContent {
-    width: 100%;
+    width: 70%;
   }
   .articleContainer .impair .textContent, .articleContainer .pair .textContent {
     width: 80%;

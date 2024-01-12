@@ -1,22 +1,28 @@
 {
   "name": "adoptelesolaire",
   "version": "0.1.0",
-  "homepage": "http://MasterPampa.github.io/AdopteLeSolaire",
+  "homepage": "https://adoptelesolaire.fr/",
   "private": true,
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "file-saver": "^2.0.5",
     "gh-pages": "^6.1.0",
     "googleapis": "^129.0.0",
     "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.1",
     "nodemailer": "^6.9.8",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
+    "react-places-autocomplete": "^7.3.0",
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
@@ -27,7 +33,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node server/server.js"
   },
   "eslintConfig": {
     "extends": [

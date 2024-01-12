@@ -108,6 +108,7 @@
     left: 10%;
     justify-content: flex-start;
     height: 75vh;
+    text-align: center;
   }
   .ma-modal .menu {
     display: none;

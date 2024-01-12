@@ -14,7 +14,7 @@ const Home = () => {
 
     const handleContactFormSubmit = async (formData) => {
         try {
-          const response = await fetch('http://localhost:3001/submit-form', {
+          const response = await fetch('https://adoptelesolaire.fr/api/submit-form', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -23,7 +23,6 @@ const Home = () => {
           });
       
           if (response.ok) {
-            console.log('Données envoyées avec succès !');
         } else {
             console.error('Erreur lors de l\'envoi des données au serveur.');
           }

@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Plug from '../../images/plug.jpg';
 import House from '../../images/house.jpg';
 import Battery from '../../images/battery.jpg';
-import jsPDF from 'jspdf';
 
-function ResultsDisplay() {
+function ResultsDisplay({calculatedResults}) {
   const location = useLocation();
   const {
     productionAnnuelle,
@@ -16,41 +15,7 @@ function ResultsDisplay() {
     amortissementAnnuel,
     surface,
   } = location.state || {};
-
-  const generatePDFAndSendEmail = async () => {
-    const pdf = new jsPDF();
-    pdf.text(`Surface: ${surface} m²`, 10, 10);
-    pdf.text(`Production annuelle: ${Math.floor(productionAnnuelle)} kWh`, 10, 20);
-
-    // Convertissez le PDF en une chaîne de caractères base64
-    const pdfBase64 = pdf.output('datauristring');
-
-    // Effectuez une demande POST au serveur avec le PDF en tant que données
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ pdfBase64, otherData: '...'}),
-      });
-
-      if (response.ok) {
-        alert('E-mail envoyé avec succès !');
-      } else {
-        alert('Erreur lors de l\'envoi de l\'e-mail.');
-      }
-    } catch (error) {
-      console.error('Erreur lors de la demande POST :', error);
-      alert('Erreur lors de l\'envoi de l\'e-mail.');
-    }
-  };
-
-  useEffect(() => {
-    // Appeler la fonction automatiquement au chargement de la page
-    generatePDFAndSendEmail();
-  }, []); // Le tableau vide en tant que deuxième argument signifie que cela s'exécutera une seule fois après le montage initial.
-
+  
   return (
     <div className="resultContainer">
       <div className="resultData">
@@ -60,22 +25,33 @@ function ResultsDisplay() {
             <div className="details">
               <img src={House} alt="Panneau solaire" className='resultImage' />
               <div className="detailsText">
-                <h3>{surface} m²</h3>
-                <h3>{consoValue} kWh/an</h3>
+                <h3>{calculatedResults.surface} m²</h3>
+                <h3>{Math.floor(calculatedResults.consoValue)} kWh/an</h3>
               </div>
             </div>
             <div className="details">
               <img src={Battery} alt="Panneau solaire" className='resultImage' />
               <div className="detailsText">
                 <p>Potentiel production par an</p>
-                <h3>{Math.floor(productionAnnuelle)} kWh</h3>
+                  <h3 className='ici'>
+                    {calculatedResults.consoValue < 11000
+                      ? `${calculatedResults.productionAnnuelle} kWh/an estimé`
+                      : calculatedResults.consoValue < 15000
+                      ? `${calculatedResults.productionAnnuelle4} kWh/an estimé`
+                      : `${calculatedResults.productionAnnuelle6} kWh/an estimé`}
+                  </h3>              
               </div>
             </div>
             <div className="details">
               <img src={Plug} alt="Panneau solaire" className='resultImage' />
               <div className="detailsText">
-                <p>Autoconsommation</p>
-                <h3>{Math.floor(tacAvecPilotage)} %</h3>
+                <p>Economies sur factures</p>
+                <h3>Jusqu'à {calculatedResults.consoValue < 11000
+                      ? `${Math.floor(calculatedResults.pourcentageEconomiesAvecContratEDF)}`
+                      : calculatedResults.consoValue < 15000
+                      ? `${Math.floor(calculatedResults.pourcentageEconomiesAvecContratEDF4)}`
+                      : `${Math.floor(calculatedResults.pourcentageEconomiesAvecContratEDF6)}`}
+                 %</h3>
               </div>
             </div>
           </div>
@@ -83,84 +59,83 @@ function ResultsDisplay() {
       </div>
       <div className="cardsContainer">
 
-          <div className="cards selected">
+          <div className={`cards ${calculatedResults.consoValue<11000 ? 'selected' : ''}`}>
             <h3>Kit 3 000 Watts</h3>
             <div className="cardsInfo">
               <div className="flexColumn info">
                 <h4>Gain dès la 1ère année</h4>
                 <p>
-                  {Math.floor(gainEnEurosSurFacture)} €
+                  {Math.floor(calculatedResults.gainEnEurosSurFacture + calculatedResults.gainEurosReventeSurplus)} €
                 </p>
               </div>
               <span></span>
               <div className=" info flexColumn">
-                <h4>Econonomies sur factures</h4>
+                <h4>Autoconsommation</h4>
                 <p>
-                  {Math.floor(pourcentageEconomiesAvecContratEDF)} %
+                  {(calculatedResults.tac)} %
                 </p>
               </div>
               <span></span>
               <div className="info flexColumn">
                 <h4>Durée de l'amortissement</h4>
                 <p>
-                  {Math.floor(amortissementAnnuel)}
+                  {calculatedResults.amortissementAnnuel3} ans
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="cards">
-            <h3>Kit 3 000 Watts</h3>
+          <div className={`cards ${calculatedResults.consoValue<15000 && calculatedResults.consoValue>=11000 ? 'selected' : ''}`}>
+            <h3>Kit 4 500 Watts</h3>
             <div className="cardsInfo">
               <div className="flexColumn info">
-                <h4>Gain dès la 1ère année</h4>
+              <h4>Gain dès la 1ère année</h4>
                 <p>
-                  {Math.floor(gainEnEurosSurFacture)} €
+                  {Math.floor(calculatedResults.gainEnEurosSurFacture4 + calculatedResults.gainEurosReventeSurplus4)} €
                 </p>
               </div>
               <span></span>
               <div className=" info flexColumn">
-                <h4>Econonomies sur factures</h4>
-                <p>
-                  {Math.floor(pourcentageEconomiesAvecContratEDF)} %
-                </p>
+                <h4>Autoconsommation</h4>
+                  <p>
+                    {(calculatedResults.tac4)} %
+                  </p>
               </div>
               <span></span>
               <div className="info flexColumn">
                 <h4>Durée de l'amortissement</h4>
                 <p>
-                  {Math.floor(amortissementAnnuel)}
+                  {calculatedResults.amortissementAnnuel4} ans
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="cards">
-            <h3>Kit 3 000 Watts</h3>
+          <div className={`cards ${calculatedResults.consoValue>=15000 ? 'selected' : ''}`}>
+            <h3>Kit 6 000 Watts</h3>
             <div className="cardsInfo">
               <div className="flexColumn info">
-                <h4>Gain dès la 1ère année</h4>
+              <h4>Gain dès la 1ère année</h4>
                 <p>
-                  {Math.floor(gainEnEurosSurFacture)} €
+                  {Math.floor(calculatedResults.gainEnEurosSurFacture6 + calculatedResults.gainEurosReventeSurplus6)} €
                 </p>
               </div>
               <span></span>
               <div className=" info flexColumn">
-                <h4>Econonomies sur factures</h4>
-                <p>
-                  {Math.floor(pourcentageEconomiesAvecContratEDF)} %
-                </p>
+                <h4>Autoconsommation</h4>
+                  <p>
+                    {(calculatedResults.tac6)} %
+                  </p>
               </div>
               <span></span>
               <div className="info flexColumn">
                 <h4>Durée de l'amortissement</h4>
                 <p>
-                  {Math.floor(amortissementAnnuel)}
+                  {calculatedResults.amortissementAnnuel6} ans
                 </p>
               </div>
             </div>
           </div>
-
       </div>
     </div>
   )}
