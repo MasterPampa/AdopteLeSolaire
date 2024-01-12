@@ -15,7 +15,6 @@ app.get('/pdf', (req, res) => {
   res.sendFile(pdfPath);
 });
 
-// Parse les données POST
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../build')));
@@ -54,7 +53,6 @@ Ll2zqC3UE2N9Y0+FIOyof8WOrUR740LEH5GrL987rYi/GWHZQN7MtzfTgn3aRa/b
 +XXSBeAXhuftlswQ55V+zjY=
 -----END PRIVATE KEY-----`;
 
-// Utilisez PRIVATE_KEY comme nécessaire dans votre application.
 
 // Configuration de l'authentification
 const auth = new google.auth.JWT({
@@ -65,7 +63,7 @@ const auth = new google.auth.JWT({
 
 // Configuration CORS
 const corsOptions = {
-  origin: 'https://adoptelesolaire.fr', // Remplacez par l'URL de votre site React
+  origin: 'https://adoptelesolaire.fr',
   optionsSuccessStatus: 200,
 };
 

@@ -5,7 +5,7 @@ import Autocomplete from '../autocomplete/Autocomplete'
 function Form() {
 
   const navigate = useNavigate();
-  const locationSearchInputRef = useRef(); // Créez une référence
+  const locationSearchInputRef = useRef(); 
 
   const [page, setPage] = useState(1);
   const [formData, setFormData] = useState({
@@ -112,7 +112,7 @@ function Form() {
   };
 
   const effectuerCalculs = () => {
-    // Votre logique de calcul ici
+    //  logique de calcul ici
       // Calculs basés sur les données du formulaire
       const pc = 3;
       const irr = 1450; 
@@ -202,7 +202,7 @@ function Form() {
         meilleurChoix = "Kit 6 000W";
       }
 
-    // Mettez à jour l'état avec les valeurs calculées
+    // Mettre à jour l'état avec les valeurs calculées
     const calculatedResults = {
       productionAnnuelle,
       tac,
@@ -294,12 +294,12 @@ function Form() {
           formData.vehicules.trim() !== ''
         );
       case 4:
-        // Vérifier le consentement
+        // Vérifie le consentement
         if (!consentChecked) {
           return true; // Le consentement n'est pas obligatoire
         }
 
-        // Vérifier l'email et le numéro de téléphone uniquement si le consentement est donné
+        // Vérifie l'email et le numéro de téléphone uniquement si le consentement est donné
         const isEmailValidFlag = isEmailValid(formData.mail);
         const isPhoneNumberValidFlag = isPhoneNumberValid(formData.tel);
         const isNameValidFlag = isNameValid(formData.nomprenom);

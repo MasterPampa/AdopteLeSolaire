@@ -67,7 +67,7 @@ async function sendTestEmail(valuesPdf) {
 
   await fillPDFFields(originalPdfPath, modifiedPdfPath, formFields);
 
-  // Créez un transporteur pour Ethereal
+  // mail hostinger
   const hostingerSmtp = {
     host: 'smtp.hostinger.com',
     port: 465,
@@ -79,14 +79,14 @@ async function sendTestEmail(valuesPdf) {
 
   const transporter = nodemailer.createTransport(hostingerSmtp);
 
-  // Lisez le contenu du fichier PDF modifié
+  // le contenu du fichier PDF modifié
   const pdfAttachment = {
     filename: 'Votre-simulation.pdf',
     content: fs.createReadStream(modifiedPdfPath),
     encoding: 'base64',
   };
 
-  // Envoyez un e-mail de test avec pièce jointe
+  // Envoi un e-mail de test avec pièce jointe
   let info = await transporter.sendMail({
     from: 'contact@adoptelesolaire.fr',
     to: valuesPdf[0][6],
@@ -95,7 +95,7 @@ async function sendTestEmail(valuesPdf) {
     attachments: [pdfAttachment],
   });
 
-  // Supprimez le fichier PDF modifié après l'envoi de l'e-mail si nécessaire
+  // Supprime le fichier PDF modifié après l'envoi de l'e-mail si nécessaire
   await fs.promises.unlink(modifiedPdfPath);
 }
 
